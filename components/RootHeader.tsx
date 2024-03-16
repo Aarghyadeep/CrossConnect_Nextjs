@@ -6,16 +6,17 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/auth'
 import MobileMenu from './MobileMenu'
 import { MessagesSquareIcon } from 'lucide-react'
+import { ModeToggle } from './darkModeButton'
 
 
-export default async function Header() {
+export default async function RootHeader() {
 
   const session = await getServerSession(authOptions);
 
   
   return (
     <header className='sticky top-0 z-10 text-white items-center flex p-3 justify-between flex-wrap
-    border-b border-gray-700 bg-[#1E1E1E] bg-opacity-95'>
+    border-b border-gray-700'>
                         {/* logo */}
       <Link className='flex items-center text-white font-bold text-2xl hover:opacity-90' href="/">
       <Image priority src="/Logo.png" alt='logo' width={40} height={40} />
@@ -44,9 +45,11 @@ export default async function Header() {
            </Link>
           </>
          )}
+
+        <ModeToggle /> 
+
               {/* userButton */}
         <UserButton session={session}  />
-
           </div>
         {/* mobile menu  */}
         <MobileMenu />                    
