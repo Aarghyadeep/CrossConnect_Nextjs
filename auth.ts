@@ -3,6 +3,9 @@ import GoogleProvider from "next-auth/providers/google";
 
 
 export const authOptions: NextAuthOptions = {
+     pages: {
+          signIn: "/SignIn"
+     },
      providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
