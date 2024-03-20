@@ -59,7 +59,7 @@ export default function PricingCards({ redirect } : { redirect: boolean }) {
       </ul>
       {redirect ? (
          <Link href="/subscription" className="bg-black rounded-md p-1 text-white hover:bg-gray-900
-         bottom-0 flex justify-center items-center">Get Started</Link>
+         bottom-0 flex justify-center items-center font-semibold">Get Started</Link>
       ) : (
         <CheckoutButton />
       )}
